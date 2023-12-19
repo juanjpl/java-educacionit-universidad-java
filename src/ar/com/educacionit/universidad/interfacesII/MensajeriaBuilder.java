@@ -52,6 +52,7 @@ public class MensajeriaBuilder {
 		
 		
 		}
+		mensaje.setContenido(mensajeAEnviar);
 		return mensaje;
 	}
 }
