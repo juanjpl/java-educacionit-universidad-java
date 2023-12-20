@@ -1,12 +1,18 @@
 package ar.com.educacionit.universidad.exceptions;
 
-public class MercadoPago implements IMetodoDePago {
+public class MercadoPago implements IMetodoDePago , IConfigurable {
 	
 	private String urlMP;
 	private String user;
 	private String password;
 	
 	
+
+	public MercadoPago() {
+		
+	}
+
+
 
 	public MercadoPago(String urlMP, String user, String password) {
 		super();
@@ -41,6 +47,20 @@ System.out.println("Conexion ok...");
 		
 		System.out.println("realizando pago...");
 		return new ResultadoPago(true,"Pago Exitoso!!");
+	}
+
+
+
+	@Override
+	public void configurar(String... args) {
+		// TODO Auto-generated method stub
+		
+		if(args.length == 0 || args.length >3) {
+			throw new IllegalArgumentException("Argumentos invalidos");
+		}
+		this.user = args[0];
+		this.password=args[1];
+		this.urlMP = args[2];
 	}
 
 }

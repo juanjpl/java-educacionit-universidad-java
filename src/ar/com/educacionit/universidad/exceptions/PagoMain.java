@@ -9,7 +9,12 @@ public class PagoMain {
 		double montoAPagar = 150;
 		String metodoDePagoSel = "MP";
 		
-		IMetodoDePago metodoDePago = new MercadoPago("https://mercadopago.com.ar","user","pasword");
+		IMetodoDePago metodoDePago = EnumMain.getMetodoEnum(metodoDePagoSel).getValor() ;
+		
+		if(metodoDePago instanceof MercadoPago mp) {
+			((IConfigurable)metodoDePago).configurar(new String[]{"User","password","https://mercadopago.com.ar"});
+			
+		}
 		
 		//cuando quiera pagar pueden pasar varias cosas 
 		//1- se corta la conexion  ---NetworkException
