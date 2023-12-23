@@ -34,7 +34,7 @@ public class MainBuscador {
 		
 		buscador.setClave(claveBuscadoPorElUsuario);
 		buscador.setCantidadXPagina(cantidadXPaginas);
-		buscador.buscar();
+		buscador.buscar(); //???
 		
 		buscador.ordenar();
 		
