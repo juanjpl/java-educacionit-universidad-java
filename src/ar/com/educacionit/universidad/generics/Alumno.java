@@ -2,7 +2,7 @@ package ar.com.educacionit.universidad.generics;
 
 import java.util.Objects;
 
-public class Alumno {
+public class Alumno implements Comparable<Alumno> {
 
 	
 	private String dni;
@@ -70,5 +70,33 @@ public class Alumno {
 	}
 	
 	
+	@Override
+	public int compareTo(Alumno o) {
+		
+		
+		/*
+		 *  1 a-b >0 => a es > b
+		 *  2 a-b <0 => a es < b 
+		 *  3 a-b =0 => a es igual a b
+		 * 
+		
+		
+		this.dni es un atributo de Alumno
+		this.dni es un String ---> ya tiene implementado .compareTo(String)
+		 * */
+		
+		//return this.dni.compareTo(o.getDni());
+		
+		//return o.getDni().compareTo(this.dni);
+		
+		int cmp = o.getDni().compareTo(this.dni);
+		
+		if(cmp == 0) {
+			cmp = o.getApellido().compareTo(this.apellido);		}
+		
+		return cmp;
+		
+	
+	}
 	
 }
