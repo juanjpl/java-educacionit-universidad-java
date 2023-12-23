@@ -2,8 +2,12 @@ package ar.com.educacionit.universidad.maps;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 
+import ar.com.educacionit.universidad.maps.ordenables.ComparadorBuilder;
+import ar.com.educacionit.universidad.maps.ordenables.ComparadorEnum;
 import ar.com.educacionit.universidad.oop.ecommerce.Libro;
 import ar.com.educacionit.universidad.oop.ecommerce.Musica;
 import ar.com.educacionit.universidad.oop.ecommerce.Pelicula;
@@ -20,10 +24,11 @@ public class Buscador {
 	
 	
 	//constructor
-	public Buscador() {
+	public Buscador(Comparator<Resultado> orden) {
 		this.resultados = new ArrayList<>();
 		this.clave="";
-		orden = 
+		this.setOrden(orden);
+		this.cantidadXPagina = 20;
 	}
 	
 	
@@ -50,6 +55,19 @@ public class Buscador {
 	
 	
 	
+	}
+	
+	
+	
+	
+	private void setOrden(Comparator<Resultado> orden) {
+		// TODO Auto-generated method stub
+		this.orden = orden;
+	}
+
+
+	public void ordenar() {
+		Collections.sort((List<Resultado>)this.resultados, this.orden);
 	}
 	
 	public String getClave() {
@@ -84,6 +102,13 @@ public class Buscador {
 	public void setClave(String clave) {
 	
 		this.clave = clave;
+	}
+
+
+	public void setCantidadXPagina(int cantidadXPaginas) {
+		// TODO Auto-generated method stub
+		this.cantidadXPagina = cantidadXPaginas;
+		
 	}
 	
 	
