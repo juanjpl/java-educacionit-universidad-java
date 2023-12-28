@@ -21,7 +21,7 @@ public class MainBuscador {
 		
 		//el objeto
 		Buscador buscador = new Buscador( 
-				ComparadorBuilder.getComparador(ComparadorEnum.MAS_VENDIDOS)
+				ComparadorBuilder.getComparador(orden)
 				);
 		
 		

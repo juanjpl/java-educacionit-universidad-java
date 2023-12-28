@@ -5,8 +5,13 @@
 	<groupId>java.primera.parte</groupId>
 	<artifactId>console-app</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
+	<packaging>jar</packaging><!-- viene por default-->
 	<description>Primer artefacto maven, para aplicación de consola.</description>
-
+<!--Variables  Indicar que version de java usamos  -->
+<properties>
+<maven.compiler.source>18</maven.compiler.source>
+<maven.compiler.target>18</maven.compiler.target>
+</properties>
 	<!--  dependencias de proyecto  -->
 
 	<dependencies>

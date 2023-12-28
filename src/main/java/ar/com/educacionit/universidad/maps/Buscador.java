@@ -46,7 +46,10 @@ public class Buscador {
 		Resultado res1 = new Libro("Sailor moon IV, Sailor Jupiter","https://cuspide.com/producto/4-sailor-moon/",500,"Naoko Takeuchi","12333",400,"Bla Bla BLa");
 		Resultado res2 = new Musica("Sailor moon cd ","https://cuspide.com/producto/5-sailor-moon/",750,"Naoko Takeuchi","Sony",new String[] {"uno","dos","tre"});
 		Resultado res3 = new Pelicula("Sailor moon The movie","https://cuspide.com/producto/12-sailor-moon/",1500,"Naoko Takeuchi","Warner","Blu-ray");
-
+		res1.setCantidadVendidos(1);
+		res2.setCantidadVendidos(2);
+		res3.setCantidadVendidos(3);
+		
 		//agregar los resultados al array resultados
 		this.resultados.add(res3);
 		this.agregarResultado(res1);
